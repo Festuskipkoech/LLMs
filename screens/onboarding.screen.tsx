@@ -11,7 +11,7 @@ import {
   } from "react-native";
   import React, { useRef, useState } from "react";
   import { LinearGradient } from "expo-linear-gradient";
-  import { onBoardingData } from "@/configs/constans";
+  import { onBoardingData } from "@/config/constants";
   import { scale, verticalScale } from "react-native-size-matters";
   import { useFonts } from "expo-font";
   import AntDesign from "@expo/vector-icons/AntDesign";
