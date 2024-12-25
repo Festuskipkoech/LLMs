@@ -19,7 +19,7 @@ import {
   import * as Speech from "expo-speech";
   import Regenerate from "@/assets/svgs/regenerate";
   import Reload from "@/assets/svgs/reload";
-  const genAI:any = new GoogleGenerativeAI(process.env.EXPO_PUBLIC_GEMINI_API_KEY);
+  const genAI:any = new GoogleGenerativeAI(process.env."AIzaSyBoO54N9L5qhcZKkpZMkDoHVWkwnm9C1RU");
 
   
   export default function HomeScreen() {
