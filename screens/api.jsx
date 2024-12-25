@@ -172,30 +172,30 @@ const sendAudioToWhisper = async (uri: string) => {
           console.log("Error sending text to Gemini", error);
         }
       };const sendToGpt = async (text: string) => {
-        try {
-          const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-          const chat = model.startChat({
-            history: [
-              {
-                role: "user",
-                parts: ["You are Festus, a friendly AI assistant who responds naturally and refers to yourself as Festus when asked for your name. You are a helpful assistant who can answer questions and help with tasks. You must always respond in English, no matter the input language, and provide helpful, clear answers."],
-              },
-            ],
-          });
-          const result = await chat.sendMessage({ parts: [text] });
-          const response = await result.response;
-          const responseText = response.text;
-          
-          setText(responseText);
-          setLoading(false);
-          setAIResponse(true);
-          await speakText(responseText);
-          return responseText;
-        } catch (error) {
-          console.log("Error sending text to Gemini", error);
-        }
-      };
-      
+  try {
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const chat = model.startChat({
+      history: [
+        {
+          role: "user",
+          parts: ["You are Festus, a friendly AI assistant who responds naturally and refers to yourself as Festus when asked for your name. You are a helpful assistant who can answer questions and help with tasks. You must always respond in English, no matter the input language, and provide helpful, clear answers."],
+        },
+      ],
+    });
+    const result = await chat.sendMessage({ parts: [text] });
+    const response = await result.response;
+    const responseText = response.text;
+    
+    setText(responseText);
+    setLoading(false);
+    setAIResponse(true);
+    await speakText(responseText);
+    return responseText;
+  } catch (error) {
+    console.log("Error sending text to Gemini", error);
+  }
+};
+
   
     const speakText = async (text: string) => {
       setAISpeaking(true);
